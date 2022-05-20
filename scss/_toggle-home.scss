@@ -1,0 +1,82 @@
+
+
+.toggle {
+  position: absolute;
+  margin-top: $y-position;
+  right: $x-position;
+
+  &_border {
+    padding: $outer-toggle-pad; 
+    height: $toggle-height;
+    width: $width-toggle;
+    border: 2px solid #f0ebeb; //outline
+    @include border-battle(40px);
+    background: linear-gradient(to bottom right, white, rgba(220,220,220,.5)), white; //3d coloring
+    box-shadow: 0 0 0 2px #e4e3e3;
+    cursor: pointer;
+  }
+}
+
+.handle {
+  position: absolute;
+  top: $handle-top;
+  left: $handle-left;
+  width: $handle-size;
+  height: $handle-size;
+  border: 1px solid #e5e5e5;
+  background: $big-background;
+  @include border-battle(50%);
+  box-shadow: 1px 3px 6px 0 rgba(0,0,0,0.4);
+  @include back-trans(left, 0.4s)
+}
+
+label { // red bar
+  position: relative;
+  display: inline-block;
+  width: $width-toggle;
+  height: $toggle-height;
+  background: #d13613;
+  @include border-battle(40px);
+  cursor: pointer;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+  @include back-trans(background, $trans-time)
+}
+
+label:after, label:before {
+  content: "";
+  position: absolute;
+  top: $label-top;
+  left: $label-left;
+  width: $label-size;
+  height: $label-size;
+  border: 2px solid #f0ebeb;
+  @include border-battle(50%);
+  box-shadow: 0 0 0 1px #fbfbfb, inset 1px 3px 6px rgba(0,0,0,.3);
+  background: #d13613;
+  @include back-trans(background, $trans-time);
+}
+
+label:before { //dot on the right side 
+  left: calc(100% + 26px);
+  background: #d1cac9;
+}
+
+input[type="checkbox"] {
+  display: none; //hides the checkbox
+}
+
+input[type="checkbox"]:checked + label {
+  background:#13d162;
+}
+
+input[type="checkbox"]:checked + label > .handle {
+  left: calc(100% - 23px)
+}
+
+input[type="checkbox"]:checked + label:after {
+  background: #d1cac9;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background: #13d162;
+}

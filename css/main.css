@@ -1,0 +1,114 @@
+.toggle {
+  position: absolute;
+  margin-top: 1rem;
+  right: 4%;
+}
+
+.toggle_border {
+  padding: 10px;
+  height: 26px;
+  width: 60px;
+  border: 2px solid #f0ebeb;
+  border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  background: linear-gradient(to bottom right, white, rgba(220, 220, 220, 0.5)), white;
+  box-shadow: 0 0 0 2px #e4e3e3;
+  cursor: pointer;
+}
+
+.handle {
+  position: absolute;
+  top: -3.4px;
+  left: -6px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  background: repeating-radial-gradient(circle at 50% 50%, rgba(200, 200, 200, 0.2) 0%, rgba(200, 200, 200, 0.2) 2%, transparent 2%, transparent 3%, rgba(200, 200, 200, 0.2) 3%, transparent 3%), conic-gradient(white 0%, silver 10%, white 35%, silver 45%, white 60%, silver 70%, white 80%, silver 95%, white 100%);
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, 0.4);
+  transition: left 0.4s;
+  -webkit-transition: left 0.4s;
+  -moz-transition: left 0.4s;
+  -ms-transition: left 0.4s;
+  -o-transition: left 0.4s;
+}
+
+label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 26px;
+  background: #d13613;
+  border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  cursor: pointer;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+  transition: background 0.5s;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -ms-transition: background 0.5s;
+  -o-transition: background 0.5s;
+}
+
+label:after, label:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -45px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #f0ebeb;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  box-shadow: 0 0 0 1px #fbfbfb, inset 1px 3px 6px rgba(0, 0, 0, 0.3);
+  background: #d13613;
+  transition: background 0.5s;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -ms-transition: background 0.5s;
+  -o-transition: background 0.5s;
+}
+
+label:before {
+  left: calc(100% + 26px);
+  background: #d1cac9;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + label {
+  background: #13d162;
+}
+
+input[type="checkbox"]:checked + label > .handle {
+  left: calc(100% - 23px);
+}
+
+input[type="checkbox"]:checked + label:after {
+  background: #d1cac9;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background: #13d162;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+/*# sourceMappingURL=main.css.map */
